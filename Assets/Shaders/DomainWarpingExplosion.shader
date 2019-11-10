@@ -65,11 +65,11 @@
 					// Initial values
 					float value = 0.0;
 					float amplitude = .5;
-					float frequency = 0.;
+					float frequency = 2;
 					// Loop of octaves
 					for (int i = 0; i < OCTAVES; i++) {
 						value += amplitude * noise(st);
-						st *= 2.;
+						st *= frequency;
 						amplitude *= .5;
 					}
 					return value;
@@ -133,7 +133,6 @@
 					#define TIME_3 (_Time.y * (0.15) * _Speed)
 					#define SIN_TIME_3 (4.0 * sin(TIME_3))
 
-					//#define ScaleFactor_1 float4(1.0, 1.0, 4.0, 4.0)
 					#define ScaleFactor_1 _Fbm_ScaleFactor
 					#define ScaleFactor_2 4.0
 					#define AddFactor_1 float4(TIME_1, TIME_2, 5.2, 1.3)

@@ -65,10 +65,11 @@
 				// Initial values
 				float value = 0.0;
 				float amplitude = .25;
+				float frequency = 2.3;
 				// Loop of octaves
 				for (int i = 0; i < OCTAVES; i++) {
 					value += amplitude * noise(st);
-					st *= 2.3;
+					st *= frequency;
 					amplitude *= .25;
 				}
 				return value;
