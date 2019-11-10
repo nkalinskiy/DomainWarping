@@ -39,8 +39,8 @@
 
 			float random(float2 st) {
 				return frac(sin(dot(st.xy,
-									float2(12.9898,78.233))) *
-							43758.5453123);
+									float2(8.9898,1235.233))) *
+							34758.545123);
 			}
 
 			float noise(float2 st) {
@@ -64,13 +64,13 @@
 			float fbm(float2 st) {
 				// Initial values
 				float value = 0.0;
-				float amplitude = .5;
+				float amplitude = .25;
 				float frequency = 0.;
 				// Loop of octaves
 				for (int i = 0; i < OCTAVES; i++) {
 					value += amplitude * noise(st);
-					st *= 2.;
-					amplitude *= .5;
+					st *= 2.3;
+					amplitude *= .25;
 				}
 				return value;
 			}
